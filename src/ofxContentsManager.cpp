@@ -13,6 +13,7 @@ namespace ofxContentsManager
     Content::Content() {
         bufferWidth = 0;
         bufferHeight = 0;
+        this->isGUIEnabled = false;
     }
     
     void Content::initGUI(int posGuiConent, int widthContentGui) {
@@ -24,7 +25,7 @@ namespace ofxContentsManager
         gui.setup(ofToUpper(getName()), pathSettings);
         gui.setPosition(posGuiConent, 0);
         
-        isGUIEnabled = true;
+        this->isGUIEnabled = true;
     }
     
     void Content::loadGUISettings() {
@@ -155,6 +156,7 @@ namespace ofxContentsManager
                 
                 if(isDebug && e->obj->isGUIEnabled) {
                     e->obj->gui.draw();
+                    ofLog()<< e->obj->getName() << " : " << e->obj->isGUIEnabled;
                 }
             }
         }
