@@ -156,7 +156,6 @@ namespace ofxContentsManager
                 
                 if(isDebug && e->obj->isGUIEnabled) {
                     e->obj->gui.draw();
-                    ofLog()<< e->obj->getName() << " : " << e->obj->isGUIEnabled;
                 }
             }
         }
